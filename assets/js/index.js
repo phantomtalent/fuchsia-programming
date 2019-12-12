@@ -240,32 +240,32 @@ document.addEventListener( 'click', function (e) {
                     duration: 500,
                     left: 0, top: 0,
                     easing: 'cubic.out'
-                };
+            };
                 
-                var MAIN_OPTS = Object.assign({}, OPTS, {
-                    stroke: 'cyan'
-                })
-                const mainCircle = new mojs.Shape(MAIN_OPTS);
-                
-                const smallCircles = [];
-                const colors = cols;
-                
-                for ( let i = 0; i < 10; i++ ) {
-                    var SMALL_OPTS = Object.assign({}, OPTS, {
-                        parent: mainCircle.el,
-                        strokeWidth: { 30: 0 },
-                        left: '50%', top: '50%',
-                        stroke: colors[ i % colors.length],
-                        delay: 'rand(0, 350)',
-                        x: 'rand(-50, 50)',
-                        y: 'rand(-50, 50)',
-                        radius: 'rand(5, 20)'
-                    });
-                        smallCircles.push(new mojs.Shape({
-                        SMALL_OPTS
-                        })
-                    );
-                }
+            var MAIN_OPTS = Object.assign({}, OPTS, {
+                stroke: 'cyan'
+            })
+            const mainCircle = new mojs.Shape(MAIN_OPTS);
+            
+            const smallCircles = [];
+            const colors = cols;
+            
+            for ( let i = 0; i < 10; i++ ) {
+                var SMALL_OPTS = Object.assign({}, OPTS, {
+                    parent: mainCircle.el,
+                    strokeWidth: { 30: 0 },
+                    left: '50%', top: '50%',
+                    stroke: colors[ i % colors.length],
+                    delay: 'rand(0, 350)',
+                    x: 'rand(-50, 50)',
+                    y: 'rand(-50, 50)',
+                    radius: 'rand(5, 20)'
+                });
+                    smallCircles.push(new mojs.Shape({
+                    SMALL_OPTS
+                    })
+                );
+            }
             break;
         default:
             // sonic boom 25 clicks
